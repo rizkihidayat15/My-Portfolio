@@ -87,7 +87,7 @@ const portfolioData = {
             tags: ["HTML", "CSS", "JavaScript", "Google Sheet API"],
             links: {
                 source: "https://github.com/rizkihidayat15/Arsip-Surat-PELINDO-WebApp",
-                demo: ""
+                demo: "https://rizkihidayat15.github.io/Web-Arsip-Surat-PELINDO/"
             }
         },
         {
