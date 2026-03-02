@@ -91,13 +91,13 @@ const portfolioData = {
             }
         },
         {
-            title: "Task Management App",
-            description: "Aplikasi manajemen tugas dengan fitur drag & drop, real-time collaboration, dan notifikasi.",
-            image: "assets/projects/taskmanager.jpg",
+            title: "Data Analytics Project",
+            description: "Membangun dashboard analisis kecelakaan jalan untuk periode 2021–2022 yang menyajikan wawasan terhadap pola kejadian, menyoroti indikator kinerja utama (KPI), serta menunjukkan keterkaitannya dengan berbagai faktor seperti waktu, lokasi, dan kondisi kejadian.",
+            image: "project/Road_Accident_Dashboard_img.png",
             icon: "fas fa-tasks",
-            tags: ["Vue.js", "Firebase", "Tailwind"],
+            tags: ["Ms. Excel", "Python", "Analysis"],
             links: {
-                source: "#",
+                source: "https://github.com/rizkihidayat15/Data-Analytics-Project",
                 demo: "#"
             }
         },
