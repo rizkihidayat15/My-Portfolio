@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio - <span id="profileName">Muhammad Rizki Hidayat</span></title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#home" class="logo" id="navLogo">Portofolio<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#skills">Keahlian</a></li>
+                <li><a href="#projects">Proyek</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <p class="greeting" id="heroGreeting">Halo, saya</p>
+                    <h1 id="heroName">Muhammad Rizki Hidayat</h1>
+                    <h2 id="heroTitle">Full Stack Developer & UI/UX Designer</h2>
+                    <p class="hero-description" id="heroDescription">Membangun solusi digital yang elegan dan fungsional dengan fokus pada pengalaman pengguna yang luar biasa.</p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">Lihat Proyek</a>
+                        <a href="#" id="downloadCV" class="btn btn-secondary" target="_blank">
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                    </div>
+                    <div class="social-links" id="heroSocial">
+                        <!-- Dynamically loaded -->
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-wrapper">
+                        <div class="profile-placeholder">
+                            <i class="fas fa-user" id="heroIcon"></i>
+                        </div>
+                        <div class="shape shape-1"></div>
+                        <div class="shape shape-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#about" class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Tentang Saya</h2>
+                <p class="section-subtitle">Kenalan lebih dekat dengan saya</p>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="image-box">
+                        <i class="fas fa-user-tie" id="aboutIcon"></i>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h3 id="aboutTitle">Full Stack Developer dengan Passion untuk Design</h3>
+                    <div id="aboutDescription">
+                        <!-- Dynamically loaded -->
+                    </div>
+                    <div class="about-stats" id="aboutStats">
+                        <!-- Dynamically loaded -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Keahlian</h2>
+                <p class="section-subtitle">Teknologi dan kemampuan yang saya kuasai</p>
+            </div>
+            <div class="skills-grid" id="skillsGrid">
+                <!-- Dynamically loaded -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Proyek</h2>
+                <p class="section-subtitle">Karya-karya terbaru yang telah saya buat</p>
+            </div>
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Dynamically loaded -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Hubungi Saya</h2>
+                <p class="section-subtitle">Punya proyek menarik? Mari diskusi!</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Mari Berbicara</h3>
+                    <p id="contactDescription">Saya selalu terbuka untuk diskusi tentang proyek baru, peluang kolaborasi, atau sekadar untuk menyapa.</p>
+                    <div class="contact-details" id="contactDetails">
+                        <!-- Dynamically loaded -->
+                    </div>
+                    <div class="social-links" id="contactSocial">
+                        <!-- Dynamically loaded -->
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" name="name" id="name" required placeholder=" ">
+                            <label for="name">Nama</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" id="email" required placeholder=" ">
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="subject" id="subject" required placeholder=" ">
+                            <label for="subject">Subjek</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" id="message" required placeholder=" "></textarea>
+                            <label for="message">Pesan</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="submitBtn">
+                            <span>Kirim Pesan</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="#home" id="footerLogo">Portofolio<span>.</span></a>
+                </div>
+                <p id="footerCopyright">&copy; 2025 Muhammad Rizki. All rights reserved.</p>
+                <div class="footer-social" id="footerSocial">
+                    <!-- Dynamically loaded -->
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#home" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Load data.js first, then script.js -->
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
