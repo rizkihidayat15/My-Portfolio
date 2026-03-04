@@ -28,6 +28,8 @@ function renderAll() {
     renderProfile();
     renderStats();
     renderSkills();
+    renderExperience();
+    renderCertifications();
     renderProjects();
     renderContacts();
     renderFooter();
@@ -162,6 +164,73 @@ function renderSkillCategory(title, items) {
     `).join('');
     
     return `<div class="skill-category"><h3>${title}</h3><div class="skill-items">${itemsHTML}</div></div>`;
+}
+
+// ========================================
+// Experience Renderer
+// ========================================
+function renderExperience() {
+    const data = portfolioData.internships;
+    const container = document.getElementById('experienceTimeline');
+    if (!container) return;
+    
+    const experienceHTML = data.map((exp, index) => {
+        const tasksHTML = exp.tasks.map(task => `<li><i class="fas fa-check"></i>${task}</li>`).join('');
+        
+        return `
+            <div class="experience-card" style="animation-delay: ${index * 0.1}s">
+                <div class="experience-icon">
+                    <i class="${exp.icon}"></i>
+                </div>
+                <div class="experience-content">
+                    <div class="experience-header">
+                        <h3>${exp.position}</h3>
+                        <span class="experience-period">${exp.period}</span>
+                    </div>
+                    <h4 class="experience-company">${exp.company}</h4>
+                    <p class="experience-location"><i class="fas fa-map-marker-alt"></i> ${exp.location}</p>
+                    <p class="experience-description">${exp.description}</p>
+                    <ul class="experience-tasks">${tasksHTML}</ul>
+                </div>
+            </div>
+        `;
+    }).join('');
+    
+    container.innerHTML = experienceHTML;
+}
+
+// ========================================
+// Certifications Renderer
+// ========================================
+function renderCertifications() {
+    const data = portfolioData.certifications;
+    const container = document.getElementById('certificationsGrid');
+    if (!container) return;
+    
+    const certificationsHTML = data.map((cert, index) => {
+        const verifyLink = cert.verifyUrl && cert.verifyUrl !== '#' 
+            ? `<a href="${cert.verifyUrl}" target="_blank" class="cert-verify">
+                <i class="fas fa-external-link-alt"></i> Verifikasi
+               </a>`
+            : '';
+        
+        return `
+            <div class="certification-card" style="animation-delay: ${index * 0.1}s">
+                <div class="cert-icon">
+                    <i class="${cert.icon}"></i>
+                </div>
+                <div class="cert-content">
+                    <h3>${cert.title}</h3>
+                    <p class="cert-issuer">${cert.issuer}</p>
+                    <p class="cert-date"><i class="fas fa-calendar"></i> ${cert.date}</p>
+                    <p class="cert-description">${cert.description}</p>
+                    ${verifyLink}
+                </div>
+            </div>
+        `;
+    }).join('');
+    
+    container.innerHTML = certificationsHTML;
 }
 
 // ========================================

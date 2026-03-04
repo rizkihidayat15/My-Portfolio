@@ -148,6 +148,100 @@ const portfolioData = {
     ],
 
     // ========================================
+    // Internship/Experience Section
+    // ========================================
+    internships: [
+        {
+            company: "PT. Pelindo (PELINDO)",
+            position: "Staff IT Support & Data Analyst",
+            period: "Juli 2024 - September 2024",
+            location: "Medan, Indonesia",
+            description: "Terlibat dalam pengelolaan dan pengembangan sistem arsip surat berbasis web menggunakan Google Sheets API. Bertanggung jawab untuk input data arsip, pemeliharaan sistem, dan analisis data untuk mendukung pengambilan keputusan operasional.",
+            tasks: [
+                "Mengembangkan aplikasi web arsip surat berbasis Google Sheets API",
+                "Melakukan input dan pengelolaan data arsip surat",
+                "Membuat laporan dan analisis data kearsipan",
+                "Memastikan kelancaran sistem dan troubleshooting"
+            ],
+            icon: "fas fa-building"
+        },
+        {
+            company: "PTPN III (Pabrik Kelapa Sawit)",
+            position: "IT Support Intern",
+            period: "Januari 2024 - Maret 2024",
+            location: "Medan, Indonesia",
+            description: "Mendukung departemen IT dalam pemeliharaan hardware dan software, serta membantu dalam pengelolaan data inventaris IT perusahaan.",
+            tasks: [
+                "Memantau dan memelihara perangkat keras komputer",
+                "Membantu pengelolaan database inventaris IT",
+                "Mendukung teknis dalam acara perusahaan",
+                "Membuat laporan dokumentasi teknis"
+            ],
+            icon: "fas fa-industry"
+        }
+    ],
+
+    // ========================================
+    // Certifications & Training Section
+    // ========================================
+    certifications: [
+        {
+            title: "Belajar Dasar pemrograman Web",
+            issuer: "Dicoding Indonesia",
+            date: "2024",
+            credentialId: "MEMX2M2N2O2P",
+            description: "Mempelajari fundamentales pengembangan web termasuk HTML, CSS, dan JavaScript dasar.",
+            icon: "fas fa-code",
+            verifyUrl: "https://www.dicoding.com/certificates/MEMX2M2N2O2P"
+        },
+        {
+            title: "Data Visualization: Dasbor dan Cerita Data yang Efektif",
+            issuer: "Dicoding Indonesia",
+            date: "2024",
+            credentialId: "JVKPNNVP2Z",
+            description: "Pelatihan tentang cara membuat visualisasi data yang efektif dan mudah dipahami.",
+            icon: "fas fa-chart-pie",
+            verifyUrl: "https://www.dicoding.com/certificates/JVKPNNVP2Z"
+        },
+        {
+            title: "Belajar Analisis Data dengan Python",
+            issuer: "Dicoding Indonesia",
+            date: "2024",
+            credentialId: "MEMZNN0V7P",
+            description: "Pelatihan analisis data menggunakan Python dengan library Pandas dan NumPy.",
+            icon: "fas fa-python",
+            verifyUrl: "https://www.dicoding.com/certificates/MEMZNN0V7P"
+        },
+        {
+            title: "Memulai Pemrograman dengan Python",
+            issuer: "Dicoding Indonesia",
+            date: "2024",
+            credentialId: "4ZQOONZ9N57D",
+            description: "Pengenalan pemrograman Python dari dasar hingga konsep object-oriented programming.",
+            icon: "fas fa-robot",
+            verifyUrl: "https://www.dicoding.com/certificates/4ZQOONZ9N57D"
+        },
+        {
+            title: "Praktikum Agile Testing",
+            issuer: "Digital Talent Scholarship - Kominfo",
+            date: "2023",
+            credentialId: "-",
+            description: "Pelatihan metodologi Agile dan praktik pengujian perangkat lunak.",
+            icon: "fas fa-vial",
+            verifyUrl: "#"
+        },
+        {
+            title: "Cyber Security Fundamentals",
+            issuer: "Sekolahku ID",
+            date: "2023",
+            credentialId: "-",
+            description: "Pelatihan dasar-dasar keamanan siber dan cara melindungi sistem dari ancaman.",
+            icon: "fas fa-shield-alt",
+            verifyUrl: "#"
+        }
+    ],
+
+    // ========================================
     // Contact Section
     // ========================================
     contact: {

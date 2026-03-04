@@ -817,6 +817,210 @@ section {
 }
 
 /* ========================================
+   Experience Section
+======================================== */
+.experience {
+    background: var(--bg-light);
+}
+
+.experience-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.experience-card {
+    display: flex;
+    gap: 24px;
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.experience-icon {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    background: var(--gradient);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.experience-content {
+    flex: 1;
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.experience-header h3 {
+    font-size: 1.25rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.experience-period {
+    background: var(--bg-light);
+    color: var(--primary-color);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.experience-company {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.experience-location {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.experience-description {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 16px;
+    font-size: 0.95rem;
+}
+
+.experience-tasks {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.experience-tasks li {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.5;
+}
+
+.experience-tasks li i {
+    color: var(--primary-color);
+    margin-top: 4px;
+    font-size: 0.8rem;
+}
+
+/* ========================================
+   Certifications Section
+======================================== */
+.certifications {
+    background: var(--bg-color);
+}
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.certification-card {
+    background: var(--card-bg);
+    padding: 28px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.certification-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.cert-icon {
+    width: 55px;
+    height: 55px;
+    background: var(--gradient);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.4rem;
+}
+
+.cert-content h3 {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    margin-bottom: 6px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.cert-issuer {
+    color: var(--primary-color);
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.cert-date {
+    color: var(--text-light);
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.cert-description {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    flex: 1;
+}
+
+.cert-verify {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--primary-color);
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: var(--transition);
+    margin-top: auto;
+}
+
+.cert-verify:hover {
+    color: var(--primary-dark);
+    transform: translateX(3px);
+}
+
+/* ========================================
    Contact Section
 ======================================== */
 .contact {
@@ -1228,6 +1432,30 @@ section {
     }
 
     .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .experience-card {
+        flex-direction: column;
+        padding: 24px;
+    }
+
+    .experience-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+
+    .experience-header {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .experience-period {
+        align-self: flex-start;
+    }
+
+    .certifications-grid {
         grid-template-columns: 1fr;
     }
 
