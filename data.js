@@ -152,7 +152,7 @@ const portfolioData = {
     // ========================================
     internships: [
         {
-            company: "PT. Pelindo (PELINDO)",
+            company: "PT. Pelindo Regional 1 Belawan",
             position: "Staff IT Support & Data Analyst",
             period: "Juli 2024 - September 2024",
             location: "Medan, Indonesia",
@@ -163,7 +163,7 @@ const portfolioData = {
                 "Membuat laporan dan analisis data kearsipan",
                 "Memastikan kelancaran sistem dan troubleshooting"
             ],
-            icon: "fas fa-building"
+            logo: "assets/logo_PELINDO.png"
         },
         {
             company: "PTPN III (Pabrik Kelapa Sawit)",
@@ -177,7 +177,7 @@ const portfolioData = {
                 "Mendukung teknis dalam acara perusahaan",
                 "Membuat laporan dokumentasi teknis"
             ],
-            icon: "fas fa-industry"
+            logo: null
         }
     ],
 

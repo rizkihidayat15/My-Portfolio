@@ -847,16 +847,28 @@ section {
 }
 
 .experience-icon {
-    width: 60px;
-    height: 60px;
-    min-width: 60px;
-    background: var(--gradient);
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+    background: #ffffff;
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    font-size: 1.5rem;
+    overflow: hidden;
+    border: 2px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+}
+
+.experience-logo {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+}
+
+.experience-icon i {
+    font-size: 2rem;
+    color: var(--primary-color);
 }
 
 .experience-content {
@@ -1276,7 +1288,7 @@ section {
 }
 
 @keyframes float {
-    0%, 100% {
+  0%, 100% {
         transform: translateY(0);
     }
     50% {
@@ -1441,9 +1453,8 @@ section {
     }
 
     .experience-icon {
-        width: 50px;
-        height: 50px;
-        font-size: 1.2rem;
+        width: 60px;
+        height: 60px;
     }
 
     .experience-header {

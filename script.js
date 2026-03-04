@@ -177,10 +177,18 @@ function renderExperience() {
     const experienceHTML = data.map((exp, index) => {
         const tasksHTML = exp.tasks.map(task => `<li><i class="fas fa-check"></i>${task}</li>`).join('');
         
+        // Render logo image or fallback icon
+        let logoHTML = '';
+        if (exp.logo) {
+            logoHTML = `<img src="${exp.logo}" alt="${exp.company}" class="experience-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><i class="fas fa-building" style="display:none;"></i>`;
+        } else {
+            logoHTML = `<i class="fas fa-building"></i>`;
+        }
+        
         return `
             <div class="experience-card" style="animation-delay: ${index * 0.1}s">
                 <div class="experience-icon">
-                    <i class="${exp.icon}"></i>
+                    ${logoHTML}
                 </div>
                 <div class="experience-content">
                     <div class="experience-header">
