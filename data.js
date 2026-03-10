@@ -186,13 +186,13 @@ const portfolioData = {
     // ========================================
     certifications: [
         {
-            title: "Belajar Dasar pemrograman Web",
-            issuer: "Dicoding Indonesia",
-            date: "2024",
-            credentialId: "MEMX2M2N2O2P",
-            description: "Mempelajari fundamentales pengembangan web termasuk HTML, CSS, dan JavaScript dasar.",
+            title: "Associate Data Scientist + Python - Nasional",
+            issuer: "Digital Talent Scholarship",
+            date: "2026",
+            credentialId: "21211993840-1754",
+            description: "Program ini dirancang untuk membekali peserta dengan kemampuan dasar dalam seluruh siklus data science, mulai dari pengelolaan data, perencanaan dan pembangunan model, hingga evaluasi dan implementasi model secara sederhana, serta memperhatikan aspek pelindungan data pribadi.",
             icon: "fas fa-code",
-            verifyUrl: "https://www.dicoding.com/certificates/MEMX2M2N2O2P"
+            verifyUrl: "https://digitalent.kominfo.go.id/cek-sertifikat"
         },
         {
             title: "Data Visualization: Dasbor dan Cerita Data yang Efektif",
