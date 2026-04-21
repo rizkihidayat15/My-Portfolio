@@ -390,6 +390,7 @@ img {
     max-width: 500px;
     margin-bottom: 32px;
     line-height: 1.8;
+    text-align: justify;
 }
 
 .hero-buttons {
@@ -611,6 +612,7 @@ section {
     margin-bottom: 20px;
     line-height: 1.8;
     font-size: 1.05rem;
+    text-align: justify;
 }
 
 .about-stats {
@@ -673,54 +675,44 @@ section {
 }
 
 .skill-items {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
 }
 
 .skill-item {
     display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.skill-item > div {
-    display: flex;
     align-items: center;
     gap: 12px;
+    padding: 12px 14px;
+    background: var(--skill-icon-bg);
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+.skill-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
 }
 
 .skill-icon {
     width: 36px;
     height: 36px;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--skill-icon-bg);
+    background: var(--gradient);
     border-radius: 8px;
-    color: var(--primary-color);
+    color: #fff;
     font-size: 1.1rem;
 }
 
 .skill-item > span {
     font-weight: 500;
     color: var(--text-color);
-    font-size: 0.95rem;
-}
-
-.skill-bar {
-    height: 6px;
-    background: var(--border-color);
-    border-radius: 3px;
-    overflow: hidden;
-}
-
-.skill-progress {
-    height: 100%;
-    background: var(--gradient);
-    border-radius: 3px;
-    width: 0;
-    transition: width 1s ease;
+    font-size: 0.9rem;
+    line-height: 1.3;
 }
 
 /* ========================================
@@ -734,6 +726,7 @@ section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+    align-items: stretch;
 }
 
 .project-card {
@@ -742,6 +735,9 @@ section {
     overflow: hidden;
     box-shadow: var(--shadow-md);
     transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .project-card:hover {
@@ -755,6 +751,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 
 .project-image i {
@@ -765,6 +762,10 @@ section {
 
 .project-content {
     padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
 }
 
 .project-content h3 {
@@ -772,6 +773,12 @@ section {
     color: var(--secondary-color);
     margin-bottom: 12px;
     font-weight: 600;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: calc(1.25rem * 1.4 * 2);
+    flex-shrink: 0;
 }
 
 .project-content p {
@@ -779,6 +786,26 @@ section {
     font-size: 0.95rem;
     line-height: 1.6;
     margin-bottom: 16px;
+    text-align: justify;
+    height: 5.6rem;
+    overflow-y: auto;
+    flex-shrink: 0;
+    padding-right: 4px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-color) transparent;
+}
+
+.project-content p::-webkit-scrollbar {
+    width: 4px;
+}
+
+.project-content p::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.project-content p::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 2px;
 }
 
 .project-tags {
@@ -786,6 +813,7 @@ section {
     flex-wrap: wrap;
     gap: 8px;
     margin-bottom: 20px;
+    flex-shrink: 0;
 }
 
 .project-tags span {
@@ -800,6 +828,7 @@ section {
 .project-links {
     display: flex;
     gap: 16px;
+    margin-top: auto;
 }
 
 .project-links a {
@@ -920,6 +949,36 @@ section {
     line-height: 1.6;
     margin-bottom: 16px;
     font-size: 0.95rem;
+    text-align: justify;
+}
+
+.experience-footer {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(0,0,0,0.07);
+}
+
+.experience-doc-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.experience-doc-link:hover {
+    color: var(--primary-dark);
+    transform: translateX(3px);
+}
+
+.experience-doc-link--disabled {
+    color: var(--text-light);
+    opacity: 0.45;
+    cursor: default;
+    pointer-events: none;
 }
 
 .experience-tasks {
@@ -951,21 +1010,22 @@ section {
     background: var(--bg-color);
 }
 
-.certifications-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-}
-
 .certification-card {
     background: var(--card-bg);
-    padding: 28px;
     border-radius: 16px;
     box-shadow: var(--shadow-md);
     transition: var(--transition);
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    overflow: hidden;
+    height: 100%;
+}
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: stretch;
 }
 
 .certification-card:hover {
@@ -973,47 +1033,120 @@ section {
     box-shadow: var(--shadow-lg);
 }
 
-.cert-icon {
-    width: 55px;
-    height: 55px;
+/* Thumbnail landscape 16:9 */
+.cert-thumb {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
     background: var(--gradient);
-    border-radius: 12px;
-    display: flex;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.cert-thumb-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.certification-card:hover .cert-thumb-img {
+    transform: scale(1.04);
+}
+
+/* Fallback icon shown when image missing or fails to load */
+.cert-thumb-icon {
+    display: none;
+    position: absolute;
+    inset: 0;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 1.4rem;
+    font-size: 2rem;
+}
+
+.cert-thumb--fallback .cert-thumb-icon {
+    display: flex;
+}
+
+.cert-thumb--fallback .cert-thumb-img {
+    display: none;
+}
+
+/* Card body */
+.cert-content {
+    padding: 20px 22px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 4px;
+    min-height: 0;
 }
 
 .cert-content h3 {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--secondary-color);
-    margin-bottom: 6px;
+    margin-bottom: 4px;
     font-weight: 600;
     line-height: 1.4;
+    /* Judul maks 2 baris, selebihnya ellipsis */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: calc(1rem * 1.4 * 2);
 }
 
 .cert-issuer {
     color: var(--primary-color);
-    font-size: 0.95rem;
-    font-weight: 500;
-    margin-bottom: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .cert-date {
     color: var(--text-light);
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     display: flex;
     align-items: center;
     gap: 6px;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 }
 
+/* Deskripsi: tinggi tetap, scroll jika teks melebihi */
 .cert-description {
     color: var(--text-light);
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     line-height: 1.6;
-    flex: 1;
+    text-align: justify;
+    height: 5.6rem;        /* ~4 baris teks */
+    overflow-y: auto;
+    margin-bottom: 12px;
+    padding-right: 4px;
+    flex-shrink: 0;
+    /* Scrollbar tipis agar rapi */
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-color) transparent;
+}
+
+.cert-description::-webkit-scrollbar {
+    width: 4px;
+}
+
+.cert-description::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.cert-description::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 2px;
 }
 
 .cert-verify {
@@ -1025,6 +1158,9 @@ section {
     font-weight: 500;
     transition: var(--transition);
     margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid rgba(0,0,0,0.07);
+    flex-shrink: 0;
 }
 
 .cert-verify:hover {

@@ -153,17 +153,16 @@ const portfolioData = {
     internships: [
         {
             company: "PT. Pelindo Regional 1 Belawan",
-            position: "Staff IT Support & Data Analyst",
-            period: "Juli 2024 - September 2024",
+            position: "Archive Management - Practical Work Student",
+            period: "Januari 2026 - April 2026",
             location: "Medan, Indonesia",
-            description: "Terlibat dalam pengelolaan dan pengembangan sistem arsip surat berbasis web menggunakan Google Sheets API. Bertanggung jawab untuk input data arsip, pemeliharaan sistem, dan analisis data untuk mendukung pengambilan keputusan operasional.",
+            description: "Melakukan input administrasi dan arsip fisik ke sistem digital dengan produktivitas rata-rata 200 dokumen per hari, menjaga konsistensi format, akurasi penamaan, dan kelengkapan metadata.",
             tasks: [
-                "Mengembangkan aplikasi web arsip surat berbasis Google Sheets API",
-                "Melakukan input dan pengelolaan data arsip surat",
-                "Membuat laporan dan analisis data kearsipan",
-                "Memastikan kelancaran sistem dan troubleshooting"
+                "Mengelola data entry terstruktur menggunakan spreadsheet melalui standardisasi kolom, validasi data, serta pengkodean arsip sehingga mempercepat proses pencarian dan pelacakan dokumen.",
+                "Merombak sistem pengarsipan dengan meningkatkan ke sistem digital online, menghemat 6 jam per minggu dalam input manual yang berulang."
             ],
-            logo: "assets/logo_PELINDO.png"
+            logo: "assets/logo_PELINDO.png",
+            docUrl: "#"
         },
         {
             company: "PTPN III (Pabrik Kelapa Sawit)",
@@ -177,14 +176,15 @@ const portfolioData = {
                 "Mendukung teknis dalam acara perusahaan",
                 "Membuat laporan dokumentasi teknis"
             ],
-            logo: null
+            logo: null,
+            docUrl: "#"
         }
     ],
 
-    // ========================================
-    // Certifications & Training Section
-    // ========================================
-    certifications: [
+// ========================================
+// Certifications & Training Section
+// ========================================
+certifications: [
         {
             title: "Associate Data Scientist + Python - Nasional",
             issuer: "Digital Talent Scholarship",
@@ -192,25 +192,28 @@ const portfolioData = {
             credentialId: "21211993840-1754",
             description: "Program ini dirancang untuk membekali peserta dengan kemampuan dasar dalam seluruh siklus data science, mulai dari pengelolaan data, perencanaan dan pembangunan model, hingga evaluasi dan implementasi model secara sederhana, serta memperhatikan aspek pelindungan data pribadi.",
             icon: "fas fa-code",
+            image: "assets/certificates/data-scientist.png",
             verifyUrl: "https://digitalent.kominfo.go.id/cek-sertifikat"
         },
         {
-            title: "Data Visualization: Dasbor dan Cerita Data yang Efektif",
-            issuer: "Dicoding Indonesia",
-            date: "2024",
-            credentialId: "JVKPNNVP2Z",
-            description: "Pelatihan tentang cara membuat visualisasi data yang efektif dan mudah dipahami.",
+            title: "Data Scientist Supervisor",
+            issuer: "Digital Talent Scholarship",
+            date: "2026",
+            credentialId: "21211994840-311",
+            description: "Pelatihan data science mencakup data screening, konstruksi model, strategi perancangan, penerapan, dan evaluasi pemodelan selama 20 jam.",
             icon: "fas fa-chart-pie",
-            verifyUrl: "https://www.dicoding.com/certificates/JVKPNNVP2Z"
+            image: "assets/certificates/data-scientist-supervisor.png",
+            verifyUrl: "https://digitalent.kominfo.go.id/cek-sertifikat"
         },
         {
-            title: "Belajar Analisis Data dengan Python",
-            issuer: "Dicoding Indonesia",
-            date: "2024",
-            credentialId: "MEMZNN0V7P",
-            description: "Pelatihan analisis data menggunakan Python dengan library Pandas dan NumPy.",
+            title: "Introduction to Data Science",
+            issuer: "Cisco Networking Academy",
+            date: "2026",
+            credentialId: "#",
+            description: "Cisco verifies the earner of this badge successfully completed the Introduction to Data Science course. The holder of this student-level credential has a broad understanding in basic concepts of Data Analytics, Data Engineering, Data Science and AI/ML related job functions. They also have insight into opportunities available for pursuing career in various data roles.",
             icon: "fas fa-python",
-            verifyUrl: "https://www.dicoding.com/certificates/MEMZNN0V7P"
+            image: "assets/certificates/data-scientist-cisco.png",
+            verifyUrl: "https://www.credly.com/badges/f1fb9d52-bfaf-4797-bcb2-6a53ec8ac561/linked_in_profile"
         },
         {
             title: "Memulai Pemrograman dengan Python",
@@ -219,6 +222,7 @@ const portfolioData = {
             credentialId: "4ZQOONZ9N57D",
             description: "Pengenalan pemrograman Python dari dasar hingga konsep object-oriented programming.",
             icon: "fas fa-robot",
+            image: "assets/certificates/python-basic.png",
             verifyUrl: "https://www.dicoding.com/certificates/4ZQOONZ9N57D"
         },
         {
@@ -228,6 +232,7 @@ const portfolioData = {
             credentialId: "-",
             description: "Pelatihan metodologi Agile dan praktik pengujian perangkat lunak.",
             icon: "fas fa-vial",
+            image: "assets/certificates/agile-testing.png",
             verifyUrl: "#"
         },
         {
@@ -237,6 +242,7 @@ const portfolioData = {
             credentialId: "-",
             description: "Pelatihan dasar-dasar keamanan siber dan cara melindungi sistem dari ancaman.",
             icon: "fas fa-shield-alt",
+            image: "assets/certificates/cyber-security.png",
             verifyUrl: "#"
         }
     ],

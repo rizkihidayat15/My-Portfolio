@@ -26,17 +26,20 @@
                 <li><a href="#projects">Proyek</a></li>
                 <li><a href="#contact">Kontak</a></li>
             </ul>
-            <div class="nav-actions">
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                    <i class="fas fa-moon"></i>
-                    <i class="fas fa-sun"></i>
-                </button>
-                <div class="menu-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <div class="nav-actions">
+                    <button id="navbarPdfBtn" class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.85rem; min-width: auto;">
+                        <i class="fas fa-file-pdf"></i> PDF
+                    </button>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-sun"></i>
+                    </button>
+                    <div class="menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </div>
-            </div>
         </div>
     </nav>
 
@@ -51,8 +54,11 @@
                     <p class="hero-description" id="heroDescription">Membangun solusi digital yang elegan dan fungsional dengan fokus pada pengalaman pengguna yang luar biasa.</p>
                     <div class="hero-buttons">
                         <a href="#projects" class="btn btn-primary">Lihat Proyek</a>
-                        <a href="#" id="downloadCV" class="btn btn-secondary" target="_blank">
+                        <a href="#" id="downloadCV" class="btn btn-secondary">
                             <i class="fas fa-download"></i> Download CV
+                        </a>
+                        <a href="#" id="downloadPortfolioPDF" class="btn" style="background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%); color: white;">
+                            <i class="fas fa-file-pdf"></i> Portfolio PDF
                         </a>
                     </div>
                     <div class="social-links" id="heroSocial">
@@ -219,6 +225,10 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 
+    <!-- PDF Generation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    
     <!-- Load data.js first, then script.js -->
     <script src="data.js"></script>
     <script src="script.js"></script>
