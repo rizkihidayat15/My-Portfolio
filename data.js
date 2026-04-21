@@ -152,7 +152,7 @@ const portfolioData = {
     // ========================================
     internships: [
         {
-            company: "PT. Pelindo Regional 1 Belawan",
+            company: "PT. Pelabuhan Indonesia (PERSERO) Regional 1 Belawan",
             position: "Archive Management - Practical Work Student",
             period: "Januari 2026 - April 2026",
             location: "Medan, Indonesia",
@@ -272,7 +272,7 @@ certifications: [
     // Footer
     // ========================================
     footer: {
-        copyright: "© 2025 Muhammad Rizki. All rights reserved."
+        copyright: "© 2025 Muhammad Rizki Hidayat. All rights reserved."
     }
 };
 
