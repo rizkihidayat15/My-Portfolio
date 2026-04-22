@@ -432,25 +432,25 @@ img {
 
 .image-wrapper {
     position: relative;
-    width: 400px;
-    height: 400px;
+    width: 420px;
+    height: 480px;
 }
 
 .profile-placeholder {
-    width: 320px;
-    height: 320px;
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    background: var(--gradient);
+    width: 340px;
+    height: 420px;
+    border-radius: 0;
+    background: transparent;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
-    box-shadow: var(--shadow-xl);
-    overflow: hidden;
+    box-shadow: none;
+    overflow: visible;
 }
 
 .profile-placeholder i {
@@ -462,8 +462,10 @@ img {
 .profile-placeholder img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    object-fit: contain;
+    object-position: bottom center;
+    border-radius: 0;
+    filter: drop-shadow(0 8px 32px rgba(0,0,0,0.35));
 }
 
 .shape {
@@ -1480,12 +1482,12 @@ section {
 
     .image-wrapper {
         width: 300px;
-        height: 300px;
+        height: 360px;
     }
 
     .profile-placeholder {
-        width: 240px;
-        height: 240px;
+        width: 260px;
+        height: 320px;
     }
 
     .profile-placeholder i {
@@ -1514,8 +1516,8 @@ section {
 @media (max-width: 768px) {
     .navbar .container {
         height: 70px;
-        padding-left: 24px;
-        padding-right: 24px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
     .menu-toggle {
@@ -1553,63 +1555,138 @@ section {
         transform: rotate(-45deg) translate(5px, -5px);
     }
 
+    /* ── HERO ── */
     .hero {
-        padding: 100px 24px 60px;
+        padding: 100px 20px 60px;
+        overflow-x: hidden;
     }
 
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero h2 {
-        font-size: 1.2rem;
-    }
-
-    .about-content {
+    .hero-content {
         grid-template-columns: 1fr;
+        gap: 32px;
         text-align: center;
     }
 
-    .image-box {
-        width: 260px;
+    .hero-image {
+        order: -1;
+        justify-content: center;
+    }
+
+    .image-wrapper {
+        width: 240px;
         height: 300px;
+    }
+
+    .profile-placeholder {
+        width: 220px;
+        height: 280px;
+    }
+
+    .profile-placeholder i {
+        font-size: 5rem;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+        word-break: break-word;
+    }
+
+    .hero h2 {
+        font-size: 1.1rem;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+        text-align: justify;
+        max-width: 100%;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .shape-1 {
+        width: 220px;
+        height: 220px;
+    }
+
+    .shape-2 {
+        width: 140px;
+        height: 140px;
+    }
+
+    /* ── TENTANG SAYA ── */
+    .about-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 32px;
+    }
+
+    .about-text p {
+        text-align: justify;
+    }
+
+    .image-box {
+        width: 240px;
+        height: 280px;
+        overflow: hidden;
+    }
+
+    .image-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
     }
 
     .about-stats {
         justify-content: center;
     }
 
+    /* ── KEAHLIAN ── */
     .skills-grid {
         grid-template-columns: 1fr;
     }
 
+    .section-subtitle {
+        max-width: 100%;
+        padding: 0 8px;
+        word-break: break-word;
+    }
+
+    /* ── PENGALAMAN ── */
     .experience-card {
         flex-direction: column;
-        padding: 24px;
+        padding: 20px;
     }
 
     .experience-icon {
-        width: 60px;
-        height: 60px;
+        width: 56px;
+        height: 56px;
     }
 
     .experience-header {
         flex-direction: column;
-        gap: 8px;
+        gap: 6px;
     }
 
     .experience-period {
         align-self: flex-start;
     }
 
+    /* ── SERTIFIKASI ── */
     .certifications-grid {
         grid-template-columns: 1fr;
     }
 
+    /* ── PROYEK ── */
     .projects-grid {
         grid-template-columns: 1fr;
     }
 
+    /* ── KONTAK ── */
     .contact-content {
         grid-template-columns: 1fr;
     }
@@ -1619,31 +1696,66 @@ section {
     }
 
     .contact-details {
-        align-items: center;
+        align-items: flex-start;
     }
 
+    .contact-item {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .contact-text {
+        min-width: 0;
+        overflow: hidden;
+    }
+
+    .contact-text span:last-child {
+        font-size: 0.9rem;
+        word-break: break-all;
+        white-space: normal;
+    }
+
+    /* ── UMUM ── */
     .section-title {
         font-size: 2rem;
     }
-    
+
     .nav-actions {
         position: absolute;
         right: 70px;
+    }
+
+    * {
+        max-width: 100%;
     }
 }
 
 @media (max-width: 480px) {
     .hero {
-        padding: 100px 20px 60px;
+        padding: 90px 16px 50px;
     }
-    
+
     .hero h1 {
-        font-size: 2rem;
+        font-size: 1.9rem;
+    }
+
+    .hero h2 {
+        font-size: 1rem;
+    }
+
+    .image-wrapper {
+        width: 200px;
+        height: 250px;
+    }
+
+    .profile-placeholder {
+        width: 185px;
+        height: 240px;
     }
 
     .hero-buttons {
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
     }
 
     .btn {
@@ -1653,12 +1765,34 @@ section {
 
     .about-stats {
         flex-direction: column;
-        gap: 24px;
+        gap: 20px;
     }
 
     .stat-item {
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    .skill-items {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-text span:last-child {
+        font-size: 0.85rem;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .cert-description {
+        height: auto;
+        max-height: 5.6rem;
+    }
+
+    .project-content p {
+        height: auto;
+        max-height: 5.6rem;
     }
 }

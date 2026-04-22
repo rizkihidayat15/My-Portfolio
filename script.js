@@ -5,176 +5,6 @@ const EMAILJS_PUBLIC_KEY = 'c9qn8ML_AOPerhOU1';
 const EMAILJS_SERVICE_ID = 'rizkihidayat15';
 const EMAILJS_TEMPLATE_ID = 'template_7he0zic';
 
-// ========================================
-    // PDF Portfolio Generation
-    // ========================================
-    async function generatePortfolioPDF() {
-        const { jsPDF } = window.jspdf;
-        const profile = portfolioData.profile;
-        const pdf = new jsPDF('p', 'mm', 'a4');
-        const pageWidth = pdf.internal.pageSize.getWidth();
-        const pageHeight = pdf.internal.pageSize.getHeight();
-        const margin = 15;
-        const contentWidth = pageWidth - 2 * margin;
-
-        // Show loading
-        showNotification('Generating creative portfolio PDF...', 'info');
-
-        try {
-            // 1. COVER PAGE
-            pdf.setFillColor(37, 99, 235);
-            pdf.rect(0, 0, pageWidth, 60, 'F');
-            
-            pdf.setFont('helvetica', 'bold');
-            pdf.setFontSize(28);
-            pdf.setTextColor(255, 255, 255);
-            pdf.text(profile.name.toUpperCase(), margin, 35, { align: 'left' });
-            
-            pdf.setFont('helvetica', 'normal');
-            pdf.setFontSize(16);
-            pdf.text(profile.title, margin, 48, { align: 'left' });
-            
-            // Profile photo placeholder (circle)
-            pdf.setFillColor(255, 255, 255);
-            pdf.circle(pageWidth - 60, 35, 25, 'F');
-            pdf.setFillColor(37, 99, 235);
-            pdf.circle(pageWidth - 60, 35, 23, 'F');
-            
-            // Gradient accent line
-            const gradientCanvas = document.createElement('canvas');
-            gradientCanvas.width = contentWidth;
-            gradientCanvas.height = 8;
-            const ctx = gradientCanvas.getContext('2d');
-            const gradient = ctx.createLinearGradient(0, 0, contentWidth, 0);
-            gradient.addColorStop(0, '#ec4899');
-            gradient.addColorStop(1, '#8b5cf6');
-            ctx.fillStyle = gradient;
-            pdf.addImage(gradientCanvas.toDataURL(), 'PNG', margin, 70, contentWidth, 8);
-
-            // Page 1: About & Stats
-            pdf.addPage();
-            pdf.setFontSize(20);
-            pdf.setFont('helvetica', 'bold');
-            pdf.setTextColor(15, 23, 42);
-            pdf.text('ABOUT ME', margin, 25);
-
-            pdf.setFontSize(12);
-            pdf.setFont('helvetica', 'normal');
-            pdf.setTextColor(52, 65, 85);
-            const aboutText = profile.aboutDescription.replace(/\n\n/g, '\n').split('\n');
-            pdf.splitTextToSize(aboutText.join(' '), contentWidth).forEach((line, i) => {
-                pdf.text(line, margin, 40 + i * 5);
-            });
-
-            // Stats
-            pdf.setFontSize(18);
-            pdf.setFont('helvetica', 'bold');
-            pdf.text('STATS', margin, 90);
-            
-            const stats = portfolioData.stats;
-            const statY = 105;
-            Object.values(stats).forEach((stat, i) => {
-                pdf.setFontSize(24);
-                pdf.text(stat.value + '+', margin + i * 60, statY);
-                pdf.setFontSize(10);
-                pdf.text(stat.label, margin + i * 60, statY + 8, { align: 'center' });
-            });
-
-            // Page 2: Skills (3 columns)
-            pdf.addPage();
-            pdf.setFontSize(20);
-            pdf.text('SKILLS', margin, 25);
-
-            const skillsCats = ['frontend', 'backend', 'tools'];
-            let skillY = 40;
-            skillsCats.forEach(cat => {
-                if (portfolioData.skills[cat]) {
-                    pdf.setFontSize(14);
-                    pdf.setFont('helvetica', 'bold');
-                    pdf.text(portfolioData.skills[cat].title.toUpperCase(), margin, skillY);
-                    skillY += 10;
-                    
-                    portfolioData.skills[cat].items.slice(0, 4).forEach(skill => {
-                        pdf.setFontSize(11);
-                        pdf.setFont('helvetica', 'normal');
-                        pdf.text(`• ${skill.name}  ${'█'.repeat(Math.floor(skill.level/20))}`, margin, skillY);
-                        skillY += 6;
-                    });
-                    skillY += 5;
-                }
-            });
-
-            // Page 3-4: Experience & Projects
-            pdf.addPage();
-            pdf.setFontSize(20);
-            pdf.text('EXPERIENCE', margin, 25);
-            
-            portfolioData.internships.slice(0, 2).forEach((exp, i) => {
-                const expY = 40 + i * 70;
-                pdf.setFontSize(14);
-                pdf.text(exp.company, margin, expY);
-                pdf.setFontSize(11);
-                pdf.text(exp.position, margin, expY + 6);
-                pdf.text(exp.period, pageWidth - margin, expY + 6, { align: 'right' });
-                pdf.text(exp.description.substring(0, 150) + '...', margin, expY + 15);
-            });
-
-            pdf.addPage();
-            pdf.setFontSize(20);
-            pdf.text('PROJECTS', margin, 25);
-            
-            portfolioData.projects.slice(0, 4).forEach((proj, i) => {
-                const projY = 40 + i * 50;
-                pdf.setFontSize(13);
-                pdf.text(proj.title, margin, projY);
-                pdf.setFontSize(10);
-                proj.tags.slice(0, 3).forEach((tag, j) => {
-                    pdf.text(tag, margin + 10 + j * 25, projY + 6);
-                });
-                pdf.text(proj.description.substring(0, 120) + '...', margin, projY + 15);
-            });
-
-            // Page 5: Certifications & Contact
-            pdf.addPage();
-            pdf.setFontSize(20);
-            pdf.text('CERTIFICATIONS', margin, 25);
-            
-            portfolioData.certifications.slice(0, 6).forEach((cert, i) => {
-                const certY = 40 + Math.floor(i / 3) * 60 + (i % 3) * 20;
-                pdf.setFontSize(11);
-                pdf.text(cert.title.substring(0, 60), margin + (i % 3) * 70, certY);
-                pdf.setFontSize(9);
-                pdf.text(cert.issuer, margin + (i % 3) * 70, certY + 5);
-            });
-
-            pdf.setFontSize(16);
-            pdf.setFont('helvetica', 'bold');
-            pdf.text('CONTACT', margin, 160);
-            
-            pdf.setFontSize(11);
-            pdf.text(portfolioData.contact.email, margin, 175);
-            pdf.text(portfolioData.contact.phone, margin, 182);
-            pdf.text(portfolioData.contact.location, margin, 189);
-
-            // Footer on all pages except first
-            const pageCount = pdf.internal.getNumberOfPages();
-            for (let i = 2; i <= pageCount; i++) {
-                pdf.setPage(i);
-                pdf.setFontSize(10);
-                pdf.setTextColor(128, 128, 128);
-                pdf.text(`Page ${i} | ${profile.fullName}`, margin, pageHeight - 10);
-            }
-
-            pdf.save(`Portfolio_${profile.name.replace(/\s+/g, '-')}_${new Date().getFullYear()}.pdf`);
-            showNotification('Creative Portfolio PDF downloaded successfully!', 'success');
-
-        } catch (error) {
-            console.error('PDF generation failed:', error);
-            showNotification('PDF generation failed. Falling back to CV.', 'error');
-            // Fallback to existing CV
-            window.open(portfolioData.profile.cv, '_blank');
-        }
-    }
 
     // ========================================
     // Document Ready
@@ -190,11 +20,17 @@ const EMAILJS_TEMPLATE_ID = 'template_7he0zic';
         initScrollAnimations();
         renderAll();
 
-        // PDF Button Handlers (after libraries load)
+        // PDF Button Handlers — buka Portofolio_Creative.pdf di tab baru
+        const pdfPath = 'assets/Portofolio_Creative.pdf';
+        const openPortfolioPDF = (e) => {
+            e.preventDefault();
+            window.open(pdfPath, '_blank', 'noopener,noreferrer');
+        };
+
         const pdfBtn = document.getElementById('downloadPortfolioPDF');
         const navbarPdfBtn = document.getElementById('navbarPdfBtn');
-        if (pdfBtn) pdfBtn.addEventListener('click', (e) => { e.preventDefault(); generatePortfolioPDF(); });
-        if (navbarPdfBtn) navbarPdfBtn.addEventListener('click', (e) => { e.preventDefault(); generatePortfolioPDF(); });
+        if (pdfBtn) pdfBtn.addEventListener('click', openPortfolioPDF);
+        if (navbarPdfBtn) navbarPdfBtn.addEventListener('click', openPortfolioPDF);
     });
 
 // ========================================
