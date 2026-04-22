@@ -272,7 +272,7 @@ certifications: [
     // Footer
     // ========================================
     footer: {
-        copyright: "© 2025 Muhammad Rizki Hidayat. All rights reserved."
+        copyright: "© 2026 Muhammad Rizki Hidayat. All rights reserved."
     }
 };
 

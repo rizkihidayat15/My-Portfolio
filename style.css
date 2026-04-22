@@ -425,70 +425,71 @@ img {
 
 .hero-image {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     animation: fadeInRight 0.8s ease forwards;
+    padding-left: 20px;
 }
 
 .image-wrapper {
     position: relative;
     width: 420px;
-    height: 480px;
+    height: 460px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -40px;
 }
 
+/* Blob utama — foto di dalamnya */
 .profile-placeholder {
-    width: 340px;
+    width: 380px;
     height: 420px;
-    border-radius: 0;
-    background: transparent;
+    background: linear-gradient(135deg, #1a56d6 0%, #06b6d4 100%);
+    border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%;
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
     z-index: 2;
-    box-shadow: none;
-    overflow: visible;
+    overflow: hidden;
+    animation: float 6s ease-in-out infinite;
+    box-shadow: 0 20px 60px rgba(26, 86, 214, 0.4);
 }
 
 .profile-placeholder i {
     font-size: 8rem;
     color: white;
     opacity: 0.9;
+    margin-bottom: 20px;
 }
 
 .profile-placeholder img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: bottom center;
-    border-radius: 0;
-    filter: drop-shadow(0 8px 32px rgba(0,0,0,0.35));
+    width: 105%;
+    height: 105%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
 }
 
+/* Shape-2 tetap sebagai aksen lingkaran di bawah kiri */
 .shape {
     position: absolute;
-    border-radius: 50%;
     animation: float 6s ease-in-out infinite;
 }
 
 .shape-1 {
-    width: 350px;
-    height: 350px;
-    background: var(--shape-1-bg);
-    top: -20px;
-    right: -20px;
-    animation-delay: 0s;
+    display: none;
 }
 
 .shape-2 {
-    width: 200px;
-    height: 200px;
+    width: 160px;
+    height: 160px;
     background: var(--shape-2-bg);
-    bottom: -30px;
-    left: -30px;
+    border-radius: 50%;
+    bottom: 10px;
+    left: -10px;
+    z-index: 0;
     animation-delay: 2s;
 }
 
@@ -1193,6 +1194,8 @@ section {
     color: var(--text-light);
     line-height: 1.8;
     margin-bottom: 32px;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .contact-details {
@@ -1206,11 +1209,14 @@ section {
     display: flex;
     align-items: center;
     gap: 16px;
+    width: 100%;
+    min-width: 0;
 }
 
 .contact-icon {
     width: 50px;
     height: 50px;
+    min-width: 50px;
     background: var(--gradient);
     border-radius: 12px;
     display: flex;
@@ -1218,12 +1224,16 @@ section {
     justify-content: center;
     color: white;
     font-size: 1.2rem;
+    flex-shrink: 0;
 }
 
 .contact-text {
     display: flex;
     flex-direction: column;
     gap: 4px;
+    min-width: 0;
+    overflow: hidden;
+    flex: 1;
 }
 
 .contact-text span:first-child {
@@ -1235,6 +1245,9 @@ section {
 .contact-text span:last-child {
     font-weight: 500;
     color: var(--secondary-color);
+    word-break: break-all;
+    white-space: normal;
+    overflow-wrap: anywhere;
 }
 
 .contact-text a:hover {
@@ -1480,14 +1493,22 @@ section {
         order: -1;
     }
 
+    .hero-image {
+        order: -1;
+        justify-content: center;
+        padding-left: 0;
+    }
+
     .image-wrapper {
-        width: 300px;
+        width: 320px;
         height: 360px;
+        margin-top: 0;
     }
 
     .profile-placeholder {
-        width: 260px;
-        height: 320px;
+        width: 300px;
+        height: 340px;
+        margin-left: 0;
     }
 
     .profile-placeholder i {
@@ -1495,13 +1516,12 @@ section {
     }
 
     .shape-1 {
-        width: 250px;
-        height: 250px;
+        display: none;
     }
 
     .shape-2 {
-        width: 150px;
-        height: 150px;
+        width: 120px;
+        height: 120px;
     }
 
     .skills-grid {
@@ -1570,20 +1590,34 @@ section {
     .hero-image {
         order: -1;
         justify-content: center;
+        padding-left: 0;
     }
 
     .image-wrapper {
-        width: 240px;
-        height: 300px;
+        width: 260px;
+        height: 290px;
+        margin-top: 0;
     }
 
     .profile-placeholder {
-        width: 220px;
-        height: 280px;
+        width: 240px;
+        height: 270px;
+        margin-left: 0;
     }
 
     .profile-placeholder i {
         font-size: 5rem;
+    }
+
+    .shape-1 {
+        display: none;
+    }
+
+    .shape-2 {
+        width: 90px;
+        height: 90px;
+        bottom: 0;
+        left: 0;
     }
 
     .hero h1 {
@@ -1605,16 +1639,6 @@ section {
         justify-content: center;
         flex-wrap: wrap;
         gap: 12px;
-    }
-
-    .shape-1 {
-        width: 220px;
-        height: 220px;
-    }
-
-    .shape-2 {
-        width: 140px;
-        height: 140px;
     }
 
     /* ── TENTANG SAYA ── */
@@ -1692,11 +1716,11 @@ section {
     }
 
     .contact-info {
-        text-align: center;
+        text-align: left;
     }
 
     .contact-details {
-        align-items: flex-start;
+        align-items: stretch;
     }
 
     .contact-item {
@@ -1707,12 +1731,15 @@ section {
     .contact-text {
         min-width: 0;
         overflow: hidden;
+        flex: 1;
     }
 
-    .contact-text span:last-child {
+    .contact-text span:last-child,
+    .contact-text a {
         font-size: 0.9rem;
         word-break: break-all;
         white-space: normal;
+        overflow-wrap: anywhere;
     }
 
     /* ── UMUM ── */
@@ -1744,13 +1771,24 @@ section {
     }
 
     .image-wrapper {
-        width: 200px;
-        height: 250px;
+        width: 210px;
+        height: 240px;
+        margin-top: 0;
     }
 
     .profile-placeholder {
-        width: 185px;
-        height: 240px;
+        width: 195px;
+        height: 225px;
+        margin-left: 0;
+    }
+
+    .shape-1 {
+        display: none;
+    }
+
+    .shape-2 {
+        width: 75px;
+        height: 75px;
     }
 
     .hero-buttons {
